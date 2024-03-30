@@ -21,7 +21,7 @@ class WidgetToDisplay extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'TopReferals',
+                'Switch Button Widget',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
