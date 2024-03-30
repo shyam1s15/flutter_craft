@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_craft/constants/constants.dart';
-import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:flutter_highlight/themes/github.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
 class DisplayCode extends StatelessWidget {
-  const DisplayCode({Key? key}) : super(key: key);
+  final String widgetCode;
+  const DisplayCode({Key? key, required this.widgetCode}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 350,
+      height: 400,
       padding: EdgeInsets.all(appPadding),
       decoration: BoxDecoration(
         color: secondaryColor,
@@ -19,49 +19,65 @@ class DisplayCode extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Widget Code',
-            style: TextStyle(
-              color: textColor,
-              fontWeight: FontWeight.w700,
-              fontSize: 15,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Widget Code',
+                style: TextStyle(
+                  color: textColor,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15,
+                ),
+              ),
+              ElevatedButton(onPressed: () {
+                Clipboard.setData(ClipboardData(text: widgetCode));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Copied to clipboard'),
+                    behavior: SnackBarBehavior.floating,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    backgroundColor: Colors.grey[900],
+                    duration: Duration(seconds: 2),
+                    margin: EdgeInsets.all(16.0),
+                    padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                    elevation: 8.0,
+                    action: SnackBarAction(
+                      label: 'Dismiss',
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                      },
+                    ),
+                  ),
+                );
+              }, child: const Text(
+                'Copy Code',
+                style: TextStyle(
+                  color: textColor,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15,
+                ),
+              ),)
+            ],
+          ),
+          SizedBox(
+            height: appPadding,
           ),
           Expanded(
-            child: CodeView(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CodeView(widgetCode: widgetCode,),
+              ],
+            ),
           )
         ],
       ),
     );
   }
-}
-
-class CodeView extends StatefulWidget {
-  const CodeView({super.key});
-
-  @override
-  State<CodeView> createState() => _CodeViewState();
-}
-
-class _CodeViewState extends State<CodeView> {
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Padding(
-      padding: EdgeInsets.all(appPadding),
-      child: SyntaxView(
-          code: widgetCode,
-          syntax: Syntax.DART,
-          syntaxTheme: SyntaxTheme.vscodeDark(),
-          fontSize: 12.0,
-          withZoom: true, // Enable/Disable zoom icon controls
-          withLinesCount: false, // Enable/Disable line number
-          expanded: false,
-          selectable: true),
-    ));
-  }
-
-  static const widgetCode = """
+  /*static const widgetCode = """
   Column(
   children: [
     // Fixed height widget
@@ -88,4 +104,32 @@ class _CodeViewState extends State<CodeView> {
   ],
 )
 """;
+*/
+}
+
+class CodeView extends StatefulWidget {
+  final String widgetCode;
+  const CodeView({super.key, required this.widgetCode});
+
+  @override
+  State<CodeView> createState() => _CodeViewState();
+}
+
+class _CodeViewState extends State<CodeView> {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+        child: Padding(
+      padding: EdgeInsets.all(appPadding),
+      child: SyntaxView(
+          code: widget.widgetCode,
+          syntax: Syntax.DART,
+          syntaxTheme: SyntaxTheme.vscodeDark(),
+          fontSize: 12.0,
+          withZoom: true, // Enable/Disable zoom icon controls
+          withLinesCount: false, // Enable/Disable line number
+          expanded: false,
+          selectable: true),
+    ));
+  }
 }

@@ -5,6 +5,7 @@ import 'package:flutter_craft/components/temp_widgets.dart';
 import 'package:flutter_craft/components/widget_displayer.dart';
 import 'package:flutter_craft/constants/constants.dart';
 import 'package:flutter_craft/constants/responsive.dart';
+import 'package:flutter_craft/widgets/ToggleAnimatedIconButton.dart';
 
 class DashboardContent extends StatelessWidget {
   const DashboardContent({Key? key}) : super(key: key);
@@ -60,26 +61,26 @@ class DashboardContent extends StatelessWidget {
                       flex: 5,
                       child: Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: appPadding,
                           ),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               if(!Responsive.isMobile(context))
-                                Expanded(
-                                  child: WidgetToDisplay(),
+                                const Expanded(
+                                  child: WidgetToDisplay(displayWidget: ToggleAnimatedIconButtonWithData()),
                                   flex: 2,
                                 ),
                               if(!Responsive.isMobile(context))
                                 SizedBox(width: appPadding,),
                               Expanded(
                                 flex: 3,
-                                child: DisplayCode(),
+                                child: DisplayCode(widgetCode: ToggleAnimatedIconButtonDisplayCode.displayCode()),
                               ),
                             ],
-                            crossAxisAlignment: CrossAxisAlignment.start,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: appPadding,
                           ),
                           /*if (Responsive.isMobile(context))

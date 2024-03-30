@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_craft/constants/constants.dart';
 class DrawerListTile extends StatelessWidget {
-  const DrawerListTile({Key? key, required this.title, required this.icon, required this.tap}) : super(key: key);
+  const DrawerListTile({Key? key, required this.title, this.icon, required this.tap}) : super(key: key);
 
   final String title;
   final VoidCallback tap;
-  final IconData icon;
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,15 @@ class DrawerListTile extends StatelessWidget {
       onTap: tap,
       horizontalTitleGap: 0.0,
       //leading: SvgPicture.asset(svgSrc,color: grey,height: 20,),
-      leading: Icon(icon, color: grey, size: 20.0),
+      leading: getIcon(icon),
       title: Text(title,style: TextStyle(color: grey),),
     );
+  }
+
+  Widget? getIcon(IconData? data) {
+    if (data == null) {
+      return null;
+    }
+    return Icon(icon, color: grey, size: 20.0);
   }
 }

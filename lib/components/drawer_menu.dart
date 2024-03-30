@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_craft/components/drawer_list_expansion_tile.dart';
 import 'package:flutter_craft/constants/constants.dart';
 
 import 'drawer_list_tile.dart';
@@ -16,10 +17,11 @@ class DrawerMenu extends StatelessWidget {
             //child: Image.asset("assets/images/logowithtext.png"),
             child: Center(child: Icon(Icons.supervisor_account, size: 40,),),
           ),
-          DrawerListTile(
-              title: 'Button',
-              icon: Icons.smart_button,
-              tap: () {}),
+          DrawerListExpansionTile(title: 'Buttons', icon: Icons.smart_button, childrens: [
+            DrawerListTile(
+                title: 'Toggle Button',
+                tap: () {}),
+          ]),
           DrawerListTile(
               title: 'Blog Post',
               icon: Icons.smart_button,
