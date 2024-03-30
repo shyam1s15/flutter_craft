@@ -25,6 +25,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.DASHBOARD);
                 }),
+            DrawerListTile(
+                title: 'Splash Button',
+                tap: () {
+                  Get.toNamed(AppRoutes.SPLASH_BUTTON);
+                }),
           ]),
           DrawerListTile(
               title: 'Blog Post',

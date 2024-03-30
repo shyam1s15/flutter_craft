@@ -1,16 +1,22 @@
 import 'package:flutter_craft/screens/dashboard_screen.dart';
+import 'package:flutter_craft/widgets/SplashButton.dart';
 import 'package:flutter_craft/widgets/ToggleAnimatedIconButton.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
   static const String DASHBOARD = '/';
-  static const String OTHER = '/other';
+  static const String SPLASH_BUTTON = '/splash-button';
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
       displayWidget: ToggleAnimatedIconButtonWithData(),
       displayWidgetCode: ToggleAnimatedIconButtonDisplayCode.displayCode(),
     )),
+    GetPage(name: SPLASH_BUTTON, page: () => DashBoardScreen(
+      displayWidget: SplashButtonWithData(),
+      displayWidgetCode: SplashButtonCode.displayCode(),
+    )),
+
     //GetPage(name: OTHER, page: () => OtherScreen()),
   ];
 }
