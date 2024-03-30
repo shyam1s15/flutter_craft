@@ -5,9 +5,10 @@ import 'package:flutter_craft/constants/constants.dart';
 import 'package:flutter_craft/constants/responsive.dart';
 
 class DashBoardScreen extends StatelessWidget {
-  const DashBoardScreen({Key? key, required this.displayWidget, required this.displayWidgetCode}) : super(key: key);
+  const DashBoardScreen({Key? key, required this.displayWidget, required this.displayWidgetCode, required this.widgetName}) : super(key: key);
   final Widget displayWidget;
   final String displayWidgetCode;
+  final String widgetName;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class DashBoardScreen extends StatelessWidget {
               ),
             Expanded(
               flex: 5,
-              child: DashboardContent(displayWidget: displayWidget, displayWidgetCode: displayWidgetCode,),
+              child: DashboardContent(displayWidget: displayWidget, displayWidgetCode: displayWidgetCode, widgetName: widgetName,),
             )
           ],
         ),

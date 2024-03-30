@@ -30,6 +30,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.SPLASH_BUTTON);
                 }),
+            DrawerListTile(
+                title: 'Animated Loading Button',
+                tap: () {
+                  Get.toNamed(AppRoutes.ANIMATED_LOADING_BUTTON);
+                }),
           ]),
           DrawerListExpansionTile(title: 'Lists', icon: Icons.list, childrens: [
             DrawerListTile(
@@ -38,6 +43,13 @@ class DrawerMenu extends StatelessWidget {
                   Get.toNamed(AppRoutes.HORIZONTAL_CATEGORY_LIST);
                 }),
 
+          ]),
+          DrawerListExpansionTile(title: 'Others', icon: Icons.smart_button, childrens: [
+            DrawerListTile(
+                title: 'Rounded Badge',
+                tap: () {
+                  Get.toNamed(AppRoutes.ROUNDED_BADGE);
+                }),
           ]),
           DrawerListTile(
               title: 'Message',

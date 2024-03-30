@@ -4,7 +4,8 @@ import 'package:flutter_craft/constants/constants.dart';
 
 class WidgetToDisplay extends StatelessWidget {
   final Widget displayWidget;
-  const WidgetToDisplay({Key? key, required this.displayWidget}) : super(key: key);
+  final String widgetName;
+  const WidgetToDisplay({Key? key, required this.displayWidget, required this.widgetName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class WidgetToDisplay extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Switch Button Widget',
+                widgetName,
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,

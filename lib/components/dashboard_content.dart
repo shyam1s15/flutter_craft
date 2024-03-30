@@ -7,9 +7,10 @@ import 'package:flutter_craft/constants/constants.dart';
 import 'package:flutter_craft/constants/responsive.dart';
 
 class DashboardContent extends StatelessWidget {
-  const DashboardContent({Key? key, required this.displayWidget, required this.displayWidgetCode}) : super(key: key);
+  const DashboardContent({Key? key, required this.displayWidget, required this.displayWidgetCode, required this.widgetName}) : super(key: key);
   final Widget displayWidget;
   final String displayWidgetCode;
+  final String widgetName;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class DashboardContent extends StatelessWidget {
                             children: [
                               if(!Responsive.isMobile(context))
                                 Expanded(
-                                  child: WidgetToDisplay(displayWidget: displayWidget),
+                                  child: WidgetToDisplay(displayWidget: displayWidget, widgetName: widgetName,),
                                   flex: 2,
                                 ),
                               if(!Responsive.isMobile(context))
