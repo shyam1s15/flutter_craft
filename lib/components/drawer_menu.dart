@@ -31,10 +31,14 @@ class DrawerMenu extends StatelessWidget {
                   Get.toNamed(AppRoutes.SPLASH_BUTTON);
                 }),
           ]),
-          DrawerListTile(
-              title: 'Blog Post',
-              icon: Icons.smart_button,
-              tap: () {}),
+          DrawerListExpansionTile(title: 'Lists', icon: Icons.list, childrens: [
+            DrawerListTile(
+                title: 'Horizontal Category list',
+                tap: () {
+                  Get.toNamed(AppRoutes.HORIZONTAL_CATEGORY_LIST);
+                }),
+
+          ]),
           DrawerListTile(
               title: 'Message',
               icon: Icons.smart_button,
