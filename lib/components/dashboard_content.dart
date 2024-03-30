@@ -5,10 +5,11 @@ import 'package:flutter_craft/components/temp_widgets.dart';
 import 'package:flutter_craft/components/widget_displayer.dart';
 import 'package:flutter_craft/constants/constants.dart';
 import 'package:flutter_craft/constants/responsive.dart';
-import 'package:flutter_craft/widgets/ToggleAnimatedIconButton.dart';
 
 class DashboardContent extends StatelessWidget {
-  const DashboardContent({Key? key}) : super(key: key);
+  const DashboardContent({Key? key, required this.displayWidget, required this.displayWidgetCode}) : super(key: key);
+  final Widget displayWidget;
+  final String displayWidgetCode;
 
   @override
   Widget build(BuildContext context) {
@@ -18,42 +19,11 @@ class DashboardContent extends StatelessWidget {
         child: Column(
           children: [
             CustomAppbar(),
-            SizedBox(
+            const SizedBox(
               height: appPadding,
             ),
             Column(
               children: [
-                /*Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: Column(
-                        children: [
-                          AnalyticCards(),
-                          SizedBox(
-                            height: appPadding,
-                          ),
-                          Users(),
-                          if (Responsive.isMobile(context))
-                            SizedBox(
-                              height: appPadding,
-                            ),
-                          if (Responsive.isMobile(context)) Discussions(),
-                        ],
-                      ),
-                    ),
-                    // if (!Responsive.isMobile(context))
-                    //   SizedBox(
-                    //     width: appPadding,
-                    //   ),
-                    // if (!Responsive.isMobile(context))
-                    //   Expanded(
-                    //     flex: 2,
-                    //     child: Discussions(),
-                    //   ),
-                  ],
-                ),*/
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -68,43 +38,25 @@ class DashboardContent extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               if(!Responsive.isMobile(context))
-                                const Expanded(
-                                  child: WidgetToDisplay(displayWidget: ToggleAnimatedIconButtonWithData()),
+                                Expanded(
+                                  child: WidgetToDisplay(displayWidget: displayWidget),
                                   flex: 2,
                                 ),
                               if(!Responsive.isMobile(context))
-                                SizedBox(width: appPadding,),
+                                const SizedBox(width: appPadding,),
                               Expanded(
                                 flex: 3,
-                                child: DisplayCode(widgetCode: ToggleAnimatedIconButtonDisplayCode.displayCode()),
+                                child: DisplayCode(widgetCode: displayWidgetCode),
                               ),
                             ],
                           ),
                           const SizedBox(
                             height: appPadding,
                           ),
-                          /*if (Responsive.isMobile(context))
-                            SizedBox(
-                              height: appPadding,
-                            ),
-                          if (Responsive.isMobile(context)) TopReferals(),
-                          if (Responsive.isMobile(context))
-                            SizedBox(
-                              height: appPadding,
-                            ),
-                          if (Responsive.isMobile(context)) UsersByDevice(),*/
                         ],
                       ),
                     ),
-                   /* if (!Responsive.isMobile(context))
-                      SizedBox(
-                        width: appPadding,
-                      ),
-                    if (!Responsive.isMobile(context))
-                      Expanded(
-                        flex: 2,
-                        child: UsersByDevice(),
-                      ),*/
+
                   ],
                 ),
               ],

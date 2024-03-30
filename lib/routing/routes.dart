@@ -1,4 +1,5 @@
 import 'package:flutter_craft/screens/dashboard_screen.dart';
+import 'package:flutter_craft/widgets/ToggleAnimatedIconButton.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
@@ -6,7 +7,10 @@ class AppRoutes {
   static const String OTHER = '/other';
 
   static final routes = [
-    GetPage(name: DASHBOARD, page: () => DashBoardScreen()),
+    GetPage(name: DASHBOARD, page: () => DashBoardScreen(
+      displayWidget: ToggleAnimatedIconButtonWithData(),
+      displayWidgetCode: ToggleAnimatedIconButtonDisplayCode.displayCode(),
+    )),
     //GetPage(name: OTHER, page: () => OtherScreen()),
   ];
 }
