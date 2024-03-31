@@ -1,3 +1,4 @@
+import 'package:flutter_craft/screens/about_me.dart';
 import 'package:flutter_craft/screens/dashboard_screen.dart';
 import 'package:flutter_craft/widgets/BottomNavBarCurvedFb1.dart';
 import 'package:flutter_craft/widgets/HorizontalCategoriesView.dart';
@@ -16,6 +17,7 @@ class AppRoutes {
   static const String ANIMATED_LOADING_BUTTON = "/animated-loading-button";
   static const String BOTTOM_CURVED_NAV_BAR = "/bottom-curved-nav-bar";
   static const String NO_INTERNET_WIDGET = "/no-internet-widget";
+  static const String ABOUT_ME = "/about-me";
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
@@ -52,6 +54,11 @@ class AppRoutes {
       displayWidget: NoInternetWidgetData(),
       displayWidgetCode: NoInternetWidgetCode.displayCode(),
       widgetName: "No internet alert widget",
+    )),
+    GetPage(name: ABOUT_ME, page: () => AboutMeScreen(
+      // displayWidget: NoInternetWidgetData(),
+      // displayWidgetCode: NoInternetWidgetCode.displayCode(),
+      // widgetName: "No internet alert widget",
     )),
   ];
 }

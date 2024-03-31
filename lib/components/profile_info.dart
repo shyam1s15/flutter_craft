@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_craft/constants/constants.dart';
 import 'package:flutter_craft/constants/responsive.dart';
+import 'package:flutter_craft/routing/routes.dart';
+import 'package:get/get.dart';
 
 class ProfileInfo extends StatelessWidget {
   const ProfileInfo({Key? key}) : super(key: key);
@@ -39,26 +41,31 @@ class ProfileInfo extends StatelessWidget {
             horizontal: appPadding,
             vertical: appPadding / 2,
           ),
-          child: Row(
-            children: [
-              ClipRRect(
-                child: Image.asset(
-                  'assets/images/my_image.jpeg',
-                  height: 38,
-                  width: 38,
-                  fit: BoxFit.cover,
+          child: InkWell(
+            onTap: () {
+              Get.toNamed(AppRoutes.ABOUT_ME);
+            },
+            child: Row(
+              children: [
+                ClipRRect(
+                  child: Image.asset(
+                    'assets/images/my_image.jpeg',
+                    height: 38,
+                    width: 38,
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(30),
                 ),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              if(!Responsive.isMobile(context))
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: appPadding / 2),
-                  child: Text('About Shyam',style: TextStyle(
-                    color: textColor,
-                    fontWeight: FontWeight.w800,
-                  ),),
-                )
-            ],
+                if(!Responsive.isMobile(context))
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: appPadding / 2),
+                    child: Text('About Shyam',style: TextStyle(
+                      color: textColor,
+                      fontWeight: FontWeight.w800,
+                    ),),
+                  )
+              ],
+            ),
           ),
         )
       ],
