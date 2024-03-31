@@ -44,11 +44,24 @@ class DrawerMenu extends StatelessWidget {
                 }),
 
           ]),
+          DrawerListExpansionTile(title: 'App Bars', icon: Icons.list, childrens: [
+            DrawerListTile(
+                title: 'Bottom Curved Nav Bar',
+                tap: () {
+                  Get.toNamed(AppRoutes.BOTTOM_CURVED_NAV_BAR);
+                }),
+
+          ]),
           DrawerListExpansionTile(title: 'Others', icon: Icons.smart_button, childrens: [
             DrawerListTile(
                 title: 'Rounded Badge',
                 tap: () {
                   Get.toNamed(AppRoutes.ROUNDED_BADGE);
+                }),
+            DrawerListTile(
+                title: 'No Internet Banner',
+                tap: () {
+                  Get.toNamed(AppRoutes.NO_INTERNET_WIDGET);
                 }),
           ]),
           DrawerListTile(

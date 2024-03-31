@@ -66,11 +66,12 @@ class DisplayCode extends StatelessWidget {
             height: appPadding,
           ),
           Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CodeView(widgetCode: widgetCode,),
-              ],
+            child: SingleChildScrollView(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // children: [
+                scrollDirection: Axis.horizontal,
+                child: CodeView(widgetCode: widgetCode,),
+              // ],
             ),
           )
         ],
