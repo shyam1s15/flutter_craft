@@ -64,14 +64,7 @@ class DrawerMenu extends StatelessWidget {
                   Get.toNamed(AppRoutes.NO_INTERNET_WIDGET);
                 }),
           ]),
-          DrawerListTile(
-              title: 'Message',
-              icon: Icons.smart_button,
-              tap: () {}),
-          DrawerListTile(
-              title: 'Statistics',
-              icon: Icons.smart_button,
-              tap: () {}),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(
@@ -80,10 +73,28 @@ class DrawerMenu extends StatelessWidget {
             ),
           ),
 
-          DrawerListTile(
-              title: 'Settings',
-              icon: Icons.smart_button,
-              tap: () {}),
+          DrawerListExpansionTile(title: 'Pages', icon: Icons.smart_button, childrens: [
+            DrawerListTile(
+                title: 'On Boarding Page',
+                tap: () {
+                  Get.toNamed(AppRoutes.ON_BOARDING_PAGE);
+                }),
+            DrawerListTile(
+                title: 'On Boarding Page2',
+                tap: () {
+                  Get.toNamed(AppRoutes.ON_BOARDING_PAGE2);
+                }),
+            DrawerListTile(
+                title: 'Profile Page',
+                tap: () {
+                  Get.toNamed(AppRoutes.PROFILE_PAGE1);
+                }),
+            DrawerListTile(
+                title: 'Sectioned Setting Page',
+                tap: () {
+                  Get.toNamed(AppRoutes.SECTIONED_SETTING_PAGE);
+                }),
+          ]),
           DrawerListTile(
               title: 'Logout',
               icon: Icons.smart_button,

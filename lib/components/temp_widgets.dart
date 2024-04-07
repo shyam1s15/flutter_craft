@@ -12,6 +12,7 @@ class WidgetToDisplay extends StatelessWidget {
     return Container(
       height: 400,
       padding: EdgeInsets.all(appPadding),
+      width: double.infinity,
       decoration: BoxDecoration(
         color: secondaryColor,
         borderRadius: BorderRadius.circular(10),
@@ -53,7 +54,7 @@ class WidgetToDisplay extends StatelessWidget {
               ),
             ),
           )*/
-          Center(child: displayWidget)
+          Expanded(child: Container(child: Center(child: displayWidget))),
         ],
       ),
     );

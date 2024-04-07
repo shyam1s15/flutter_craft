@@ -1,3 +1,7 @@
+import 'package:flutter_craft/pages/OnBoardingPage.dart';
+import 'package:flutter_craft/pages/OnBoaringPage2.dart';
+import 'package:flutter_craft/pages/ProfilePage1.dart';
+import 'package:flutter_craft/pages/SectionedSettingPage.dart';
 import 'package:flutter_craft/screens/about_me.dart';
 import 'package:flutter_craft/screens/dashboard_screen.dart';
 import 'package:flutter_craft/widgets/BottomNavBarCurvedFb1.dart';
@@ -18,6 +22,10 @@ class AppRoutes {
   static const String BOTTOM_CURVED_NAV_BAR = "/bottom-curved-nav-bar";
   static const String NO_INTERNET_WIDGET = "/no-internet-widget";
   static const String ABOUT_ME = "/about-me";
+  static const String ON_BOARDING_PAGE = "/on-boarding-page";
+  static const String ON_BOARDING_PAGE2 = "/on-boarding-page2";
+  static const String PROFILE_PAGE1 = "/profile-page1";
+  static const String SECTIONED_SETTING_PAGE = "/sectioned-setting-page";
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
@@ -59,6 +67,26 @@ class AppRoutes {
       // displayWidget: NoInternetWidgetData(),
       // displayWidgetCode: NoInternetWidgetCode.displayCode(),
       // widgetName: "No internet alert widget",
+    )),
+    GetPage(name: ON_BOARDING_PAGE, page: () => DashBoardScreen(
+      displayWidget: ConcentricAnimationOnboarding(),
+      displayWidgetCode: ConcentricAnimationOnboardingData().displayCode(),
+      widgetName: "On Boarding Page",
+    )),
+    GetPage(name: ON_BOARDING_PAGE2, page: () => DashBoardScreen(
+      displayWidget: OnboardingPage2(),
+      displayWidgetCode: OnboardingPage2Data().displayCode(),
+      widgetName: "On Boarding Page",
+    )),
+    GetPage(name: PROFILE_PAGE1, page: () => DashBoardScreen(
+      displayWidget: ProfilePage1(),
+      displayWidgetCode: ProfilePage1Data().displayCode(),
+      widgetName: "Profile Page",
+    )),
+    GetPage(name: SECTIONED_SETTING_PAGE, page: () => DashBoardScreen(
+      displayWidget: SectionedSettingsPage(),
+      displayWidgetCode: SectionedSettingPageData().displayCode(),
+      widgetName: "Profile Page",
     )),
   ];
 }

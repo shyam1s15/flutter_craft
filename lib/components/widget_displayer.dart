@@ -119,18 +119,17 @@ class CodeView extends StatefulWidget {
 class _CodeViewState extends State<CodeView> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Padding(
-      padding: EdgeInsets.all(appPadding),
-      child: SyntaxView(
-          code: widget.widgetCode,
-          syntax: Syntax.DART,
-          syntaxTheme: SyntaxTheme.vscodeDark(),
-          fontSize: 12.0,
-          withZoom: true, // Enable/Disable zoom icon controls
-          withLinesCount: false, // Enable/Disable line number
-          expanded: false,
-          selectable: true),
-    ));
+    return Padding(
+          padding: EdgeInsets.all(appPadding),
+          child: SyntaxView(
+      code: widget.widgetCode,
+      syntax: Syntax.DART,
+      syntaxTheme: SyntaxTheme.vscodeDark(),
+      fontSize: 12.0,
+      withZoom: true, // Enable/Disable zoom icon controls
+      withLinesCount: false, // Enable/Disable line number
+      expanded: false,
+      selectable: true),
+        );
   }
 }
