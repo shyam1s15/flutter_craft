@@ -35,6 +35,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.ANIMATED_LOADING_BUTTON);
                 }),
+            DrawerListTile(
+                title: 'Radio List tile',
+                tap: () {
+                  Get.toNamed(AppRoutes.RADIO_LIST_TILE_WIDGET);
+                }),
           ]),
           DrawerListExpansionTile(title: 'Lists', icon: Icons.list, childrens: [
             DrawerListTile(
@@ -50,7 +55,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.BOTTOM_CURVED_NAV_BAR);
                 }),
-
+            DrawerListTile(
+                title: 'Popup menu dots button',
+                tap: () {
+                  Get.toNamed(AppRoutes.POPUP_MENU_BUTTON_WIDGET);
+                }),
           ]),
           DrawerListExpansionTile(title: 'Others', icon: Icons.smart_button, childrens: [
             DrawerListTile(
@@ -62,6 +71,16 @@ class DrawerMenu extends StatelessWidget {
                 title: 'No Internet Banner',
                 tap: () {
                   Get.toNamed(AppRoutes.NO_INTERNET_WIDGET);
+                }),
+            DrawerListTile(
+                title: 'Decorated Box with trans',
+                tap: () {
+                  Get.toNamed(AppRoutes.DECORATED_BOX_TRANSITION);
+                }),
+            DrawerListTile(
+                title: 'stepper',
+                tap: () {
+                  Get.toNamed(AppRoutes.STEPPER_WIDGET);
                 }),
           ]),
 
@@ -94,11 +113,12 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.SECTIONED_SETTING_PAGE);
                 }),
+            DrawerListTile(
+                title: 'Simple Setting Page',
+                tap: () {
+                  Get.toNamed(AppRoutes.SIMPLE_SETTINGS_PAGE);
+                }),
           ]),
-          DrawerListTile(
-              title: 'Logout',
-              icon: Icons.smart_button,
-              tap: () {}),
         ],
       ),
     );

@@ -31,14 +31,14 @@ class WidgetToDisplay extends StatelessWidget {
                   color: textColor,
                 ),
               ),
-              Text(
+              /*Text(
                 'View All',
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color: textColor.withOpacity(0.5),
                 ),
-              ),
+              ),*/
             ],
           ),
           SizedBox(

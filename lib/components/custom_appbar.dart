@@ -16,7 +16,8 @@ class CustomAppbar extends StatelessWidget {
             onPressed: () {},
             icon: Icon(Icons.menu,color: textColor.withOpacity(0.5),),
           ),
-        Expanded(child: SearchField()),
+        //Expanded(child: SearchField()),
+        Expanded(child: SizedBox()),
         ProfileInfo()
       ],
     );
