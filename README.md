@@ -5,7 +5,7 @@ Flutter Widget Livebook
   <a aria-label="Shyam Kachhadiya" href="https://github.com/shyam1s15">
     <img src="https://img.shields.io/badge/MADE%20BY-SHYAM%20-blue.svg?style=for-the-badge&labelColor=000000">
   </a>
-  <a aria-label="License" href="https://github.com/leanflutter/flutter-widget-livebook/blob/master/LICENSE">
+  <a aria-label="License" href="https://github.com/shyam1s15/flutter_craft/blob/master/LICENSE">
     <img alt="" src="https://img.shields.io/badge/LICENSE-MIT-green.svg?style=for-the-badge&labelColor=000000">
   </a>
 </p>
