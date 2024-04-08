@@ -43,7 +43,7 @@ class ProfileInfo extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
-              Get.toNamed(AppRoutes.ABOUT_ME);
+              //Get.toNamed(AppRoutes.ABOUT_ME);
             },
             child: Row(
               children: [
@@ -59,7 +59,7 @@ class ProfileInfo extends StatelessWidget {
                 if(!Responsive.isMobile(context))
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: appPadding / 2),
-                    child: Text('About Shyam',style: TextStyle(
+                    child: Text("I'm Shyam",style: TextStyle(
                       color: textColor,
                       fontWeight: FontWeight.w800,
                     ),),
