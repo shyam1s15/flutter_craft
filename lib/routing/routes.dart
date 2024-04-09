@@ -5,6 +5,9 @@ import 'package:flutter_craft/pages/SectionedSettingPage.dart';
 import 'package:flutter_craft/pages/SimpleSettingsPage.dart';
 import 'package:flutter_craft/screens/about_me.dart';
 import 'package:flutter_craft/screens/dashboard_screen.dart';
+import 'package:flutter_craft/widgets/AnimatedDefaultTextWidget.dart';
+import 'package:flutter_craft/widgets/AnimatedListWidget.dart';
+import 'package:flutter_craft/widgets/AnimatedOpacityWidget.dart';
 import 'package:flutter_craft/widgets/BottomNavBarCurvedFb1.dart';
 import 'package:flutter_craft/widgets/DecoratedBoxTransitionWidget.dart';
 import 'package:flutter_craft/widgets/HorizontalCategoriesView.dart';
@@ -12,6 +15,7 @@ import 'package:flutter_craft/widgets/LoadingAnimatedButton.dart';
 import 'package:flutter_craft/widgets/NoInternetAlertWidget.dart';
 import 'package:flutter_craft/widgets/PopupMenuButtonWidget.dart';
 import 'package:flutter_craft/widgets/RadioListTileWidget.dart';
+import 'package:flutter_craft/widgets/ReOrderableList.dart';
 import 'package:flutter_craft/widgets/RoundedBadge.dart';
 import 'package:flutter_craft/widgets/SimpleTabbarWidget.dart';
 import 'package:flutter_craft/widgets/SplashButton.dart';
@@ -40,6 +44,10 @@ class AppRoutes {
   static const String STEPPER_WIDGET = "/stepper-widget";
   static const String SIMPLE_TABBAR = "/simple-tabbar";
   static const String TOOL_TIP_WIDGET = "/tool-tip-widget";
+  static const String REDORDERABLE_LIST = "/re-ordeable-list-widget";
+  static const String ANIMATED_DEFAULT_TEXT_WIDGET = "/animated-default-widget";
+  static const String ANIMTED_LIST_WIDGET = "/animated-list-widget";
+  static const String ANIMATED_OPACITY_WIDGET = "/animated-opacity-widget";
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
@@ -136,6 +144,26 @@ class AppRoutes {
       displayWidget: ToolTipWidget(),
       displayWidgetCode: ToolTipWidgetCode().displayCode(),
       widgetName: "Tool tip widget",
+    )),
+    GetPage(name: REDORDERABLE_LIST, page: () => DashBoardScreen(
+      displayWidget: ReorderableListPage(),
+      displayWidgetCode: ReOrderableListCode().displayCode(),
+      widgetName: "Reorderable list widget",
+    )),
+    GetPage(name: ANIMATED_DEFAULT_TEXT_WIDGET, page: () => DashBoardScreen(
+      displayWidget: AnimatedDefaultTextStyleWidget(),
+      displayWidgetCode: AnimatedDefaultTextWidgetCode().displayCode(),
+      widgetName: "Animated Text widget",
+    )),
+    GetPage(name: ANIMTED_LIST_WIDGET, page: () => DashBoardScreen(
+      displayWidget: AnimatedListWidget(),
+      displayWidgetCode: AnimatedListWidgetCode().displayCode(),
+      widgetName: "Animated List Widget",
+    )),
+    GetPage(name: ANIMATED_OPACITY_WIDGET, page: () => DashBoardScreen(
+      displayWidget: AnimatedOpacityWidget(),
+      displayWidgetCode: AnimatedListWidgetCode().displayCode(),
+      widgetName: "Animated Opacity Widget",
     )),
   ];
 }
