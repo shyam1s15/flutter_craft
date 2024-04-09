@@ -60,6 +60,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.POPUP_MENU_BUTTON_WIDGET);
                 }),
+            DrawerListTile(
+                title: 'Simple Tab Bar',
+                tap: () {
+                  Get.toNamed(AppRoutes.SIMPLE_TABBAR);
+                }),
           ]),
           DrawerListExpansionTile(title: 'Others', icon: Icons.smart_button, childrens: [
             DrawerListTile(
@@ -81,6 +86,11 @@ class DrawerMenu extends StatelessWidget {
                 title: 'stepper',
                 tap: () {
                   Get.toNamed(AppRoutes.STEPPER_WIDGET);
+                }),
+            DrawerListTile(
+                title: 'Tool tip',
+                tap: () {
+                  Get.toNamed(AppRoutes.TOOL_TIP_WIDGET);
                 }),
           ]),
 

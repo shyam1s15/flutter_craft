@@ -13,9 +13,11 @@ import 'package:flutter_craft/widgets/NoInternetAlertWidget.dart';
 import 'package:flutter_craft/widgets/PopupMenuButtonWidget.dart';
 import 'package:flutter_craft/widgets/RadioListTileWidget.dart';
 import 'package:flutter_craft/widgets/RoundedBadge.dart';
+import 'package:flutter_craft/widgets/SimpleTabbarWidget.dart';
 import 'package:flutter_craft/widgets/SplashButton.dart';
 import 'package:flutter_craft/widgets/StepperWidget.dart';
 import 'package:flutter_craft/widgets/ToggleAnimatedIconButton.dart';
+import 'package:flutter_craft/widgets/ToolTipWidget.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
@@ -36,6 +38,8 @@ class AppRoutes {
   static const String POPUP_MENU_BUTTON_WIDGET = "/popup-menu-button-widet";
   static const String RADIO_LIST_TILE_WIDGET = "/radio-list-tile";
   static const String STEPPER_WIDGET = "/stepper-widget";
+  static const String SIMPLE_TABBAR = "/simple-tabbar";
+  static const String TOOL_TIP_WIDGET = "/tool-tip-widget";
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
@@ -111,17 +115,27 @@ class AppRoutes {
     GetPage(name: POPUP_MENU_BUTTON_WIDGET, page: () => DashBoardScreen(
       displayWidget: PopupMenuButtonWidget(),
       displayWidgetCode: PopupMenuButtonWidgetCode().displayCode(),
-      widgetName: "Decorated Transitioned Page",
+      widgetName: "Popup menu button widget",
     )),
     GetPage(name: RADIO_LIST_TILE_WIDGET, page: () => DashBoardScreen(
       displayWidget: RatioListTileWidget(),
       displayWidgetCode: RatioListTileWidgetCode().displayCode(),
-      widgetName: "Decorated Transitioned Page",
+      widgetName: "Radio list tile widget",
     )),
     GetPage(name: STEPPER_WIDGET, page: () => DashBoardScreen(
       displayWidget: StepperWidget(),
       displayWidgetCode: StepperWidgetCode().displayCode(),
-      widgetName: "Decorated Transitioned Page",
+      widgetName: "Stepper widget",
+    )),
+    GetPage(name: SIMPLE_TABBAR, page: () => DashBoardScreen(
+      displayWidget: SimpleTabbarWidget(),
+      displayWidgetCode: SimpleTabbarWidgetCode().displayCode(),
+      widgetName: "Simple tabbar",
+    )),
+    GetPage(name: TOOL_TIP_WIDGET, page: () => DashBoardScreen(
+      displayWidget: ToolTipWidget(),
+      displayWidgetCode: ToolTipWidgetCode().displayCode(),
+      widgetName: "Tool tip widget",
     )),
   ];
 }
