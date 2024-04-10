@@ -60,6 +60,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.REDORDERABLE_LIST);
                 }),
+            DrawerListTile(
+                title: 'Dismissible widget',
+                tap: () {
+                  Get.toNamed(AppRoutes.DISMISSIBLE_WIDGET);
+                }),
           ]),
           DrawerListExpansionTile(
               title: 'App Bars',
@@ -98,6 +103,11 @@ class DrawerMenu extends StatelessWidget {
                 tap: () {
                   Get.toNamed(AppRoutes.ANIMATED_OPACITY_WIDGET);
                 }),
+            DrawerListTile(
+                title: 'Animated Switcher Widget',
+                tap: () {
+                  Get.toNamed(AppRoutes.ANIMATED_SWITCHER_WIDGET);
+                }),
           ]),
           DrawerListExpansionTile(
               title: 'Others',
@@ -127,6 +137,21 @@ class DrawerMenu extends StatelessWidget {
                     title: 'Tool tip',
                     tap: () {
                       Get.toNamed(AppRoutes.TOOL_TIP_WIDGET);
+                    }),
+                DrawerListTile(
+                    title: 'Clip Oval',
+                    tap: () {
+                      Get.toNamed(AppRoutes.CLIP_OVAL_WIDGET);
+                    }),
+                DrawerListTile(
+                    title: 'Clip R Rect',
+                    tap: () {
+                      Get.toNamed(AppRoutes.CLIP_R_RECT_WIDGET);
+                    }),
+                DrawerListTile(
+                    title: 'Clip Path',
+                    tap: () {
+                      Get.toNamed(AppRoutes.CLIP_PATH_WIDGET);
                     }),
               ]),
           Padding(

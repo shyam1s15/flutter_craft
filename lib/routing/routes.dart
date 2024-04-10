@@ -8,8 +8,13 @@ import 'package:flutter_craft/screens/dashboard_screen.dart';
 import 'package:flutter_craft/widgets/AnimatedDefaultTextWidget.dart';
 import 'package:flutter_craft/widgets/AnimatedListWidget.dart';
 import 'package:flutter_craft/widgets/AnimatedOpacityWidget.dart';
+import 'package:flutter_craft/widgets/AnimatedSwitcherWidget.dart';
 import 'package:flutter_craft/widgets/BottomNavBarCurvedFb1.dart';
+import 'package:flutter_craft/widgets/ClipOvalWidget.dart';
+import 'package:flutter_craft/widgets/ClipPathWidget.dart';
+import 'package:flutter_craft/widgets/ClipRRectWidget.dart';
 import 'package:flutter_craft/widgets/DecoratedBoxTransitionWidget.dart';
+import 'package:flutter_craft/widgets/DismissibleWidget.dart';
 import 'package:flutter_craft/widgets/HorizontalCategoriesView.dart';
 import 'package:flutter_craft/widgets/LoadingAnimatedButton.dart';
 import 'package:flutter_craft/widgets/NoInternetAlertWidget.dart';
@@ -48,6 +53,11 @@ class AppRoutes {
   static const String ANIMATED_DEFAULT_TEXT_WIDGET = "/animated-default-widget";
   static const String ANIMTED_LIST_WIDGET = "/animated-list-widget";
   static const String ANIMATED_OPACITY_WIDGET = "/animated-opacity-widget";
+  static const String ANIMATED_SWITCHER_WIDGET = "/animated-switcher-widget";
+  static const String CLIP_OVAL_WIDGET = "/clip-oval-widget";
+  static const String CLIP_PATH_WIDGET = "/clip-path-widget";
+  static const String CLIP_R_RECT_WIDGET = "/clip-r-rect-widget";
+  static const String DISMISSIBLE_WIDGET = "/dismissible-widget";
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
@@ -165,5 +175,31 @@ class AppRoutes {
       displayWidgetCode: AnimatedListWidgetCode().displayCode(),
       widgetName: "Animated Opacity Widget",
     )),
+    GetPage(name: ANIMATED_SWITCHER_WIDGET, page: () => DashBoardScreen(
+      displayWidget: AnimatedSwitcherWidget(),
+      displayWidgetCode: AnimatedSwitcherWidgetCode().displayCode(),
+      widgetName: "Animated Switcher Widget",
+    )),
+    GetPage(name: CLIP_OVAL_WIDGET, page: () => DashBoardScreen(
+      displayWidget: ClipOvalWidget(),
+      displayWidgetCode: ClipOvalWidgetCode().displayCode(),
+      widgetName: "Clip Oval Widget",
+    )),
+    GetPage(name: CLIP_PATH_WIDGET, page: () => DashBoardScreen(
+      displayWidget: ClipPathWidget(),
+      displayWidgetCode: ClipPathWidgetCode().displayCode(),
+      widgetName: "ClipPath Widget",
+    )),
+    GetPage(name: CLIP_R_RECT_WIDGET, page: () => DashBoardScreen(
+      displayWidget: ClipRRectWidget(),
+      displayWidgetCode: ClipRRectWidgetCode().displayCode(),
+      widgetName: "ClipRRect Widget",
+    )),
+    GetPage(name: DISMISSIBLE_WIDGET, page: () => DashBoardScreen(
+      displayWidget: DismissibleWidget(),
+      displayWidgetCode: DismissibleWidgetCode().displayCode(),
+      widgetName: "Dismissible widget",
+    )),
+
   ];
 }
