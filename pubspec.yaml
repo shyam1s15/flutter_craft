@@ -41,6 +41,8 @@ dependencies:
       url: https://github.com/shyam1s15/flutter_syntax_view
   get: ^4.6.6
   concentric_transition: ^1.0.3
+  reviews_slider: ^2.0.0
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:

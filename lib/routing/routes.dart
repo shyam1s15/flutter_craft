@@ -15,12 +15,14 @@ import 'package:flutter_craft/widgets/ClipPathWidget.dart';
 import 'package:flutter_craft/widgets/ClipRRectWidget.dart';
 import 'package:flutter_craft/widgets/DecoratedBoxTransitionWidget.dart';
 import 'package:flutter_craft/widgets/DismissibleWidget.dart';
+import 'package:flutter_craft/widgets/FlowWidget.dart';
 import 'package:flutter_craft/widgets/HorizontalCategoriesView.dart';
 import 'package:flutter_craft/widgets/LoadingAnimatedButton.dart';
 import 'package:flutter_craft/widgets/NoInternetAlertWidget.dart';
 import 'package:flutter_craft/widgets/PopupMenuButtonWidget.dart';
 import 'package:flutter_craft/widgets/RadioListTileWidget.dart';
 import 'package:flutter_craft/widgets/ReOrderableList.dart';
+import 'package:flutter_craft/widgets/ReviewSliderWidget.dart';
 import 'package:flutter_craft/widgets/RoundedBadge.dart';
 import 'package:flutter_craft/widgets/SimpleTabbarWidget.dart';
 import 'package:flutter_craft/widgets/SplashButton.dart';
@@ -58,6 +60,8 @@ class AppRoutes {
   static const String CLIP_PATH_WIDGET = "/clip-path-widget";
   static const String CLIP_R_RECT_WIDGET = "/clip-r-rect-widget";
   static const String DISMISSIBLE_WIDGET = "/dismissible-widget";
+  static const String FLOW_WIDGET = "/flow-widget";
+  static const String REVIEW_SLIDER_WIDGET = "/review-slider-widget";
 
   static final routes = [
     GetPage(name: DASHBOARD, page: () => DashBoardScreen(
@@ -200,6 +204,15 @@ class AppRoutes {
       displayWidgetCode: DismissibleWidgetCode().displayCode(),
       widgetName: "Dismissible widget",
     )),
-
+    GetPage(name: FLOW_WIDGET, page: () => DashBoardScreen(
+      displayWidget: FlowWidget(),
+      displayWidgetCode: FlowWidgetCode().displayCode(),
+      widgetName: "Flow widget",
+    )),
+    GetPage(name: REVIEW_SLIDER_WIDGET, page: () => DashBoardScreen(
+      displayWidget: ReviewSliderWidget(),
+      displayWidgetCode: ReviewSliderWidgetCode().displayCode(),
+      widgetName: "Review Slider widget",
+    )),
   ];
 }

@@ -85,6 +85,11 @@ class DrawerMenu extends StatelessWidget {
                     tap: () {
                       Get.toNamed(AppRoutes.SIMPLE_TABBAR);
                     }),
+                DrawerListTile(
+                    title: 'Flow Widget',
+                    tap: () {
+                      Get.toNamed(AppRoutes.FLOW_WIDGET);
+                    }),
               ]),
           DrawerListExpansionTile(
               title: 'Animated Widgets', icon: Icons.animation_outlined, childrens: [
@@ -107,6 +112,11 @@ class DrawerMenu extends StatelessWidget {
                 title: 'Animated Switcher Widget',
                 tap: () {
                   Get.toNamed(AppRoutes.ANIMATED_SWITCHER_WIDGET);
+                }),
+            DrawerListTile(
+                title: 'Review Slider Widget',
+                tap: () {
+                  Get.toNamed(AppRoutes.REVIEW_SLIDER_WIDGET);
                 }),
           ]),
           DrawerListExpansionTile(
